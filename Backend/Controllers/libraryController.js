@@ -1,11 +1,13 @@
 import { Library } from "../Models/library.js";
 
+// controller to handle the get request for book list
 export const getList = (req, res) => {
   Library.findAll().then((list) => {
     return res.json(list);
   });
 };
 
+// controller to handle the adding of a new book to database library table
 export const postBook = (req, res) => {
   console.log(req.body);
   const title = req.body.title;
@@ -24,4 +26,3 @@ export const postBook = (req, res) => {
     })
     .catch((err) => console.log(err));
 };
-

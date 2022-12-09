@@ -1,8 +1,11 @@
 import express from 'express';
+
 import { getList, postBook } from '../Controllers/libraryController.js';
 
 export const router = express.Router();
 
-router.get('/myList', getList);
+// router to get book list from database
+router.get('/bookList', getList);
 
-router.post('/myList', postBook);
+// router to add book to database
+router.post('/addBookToList', postBook);

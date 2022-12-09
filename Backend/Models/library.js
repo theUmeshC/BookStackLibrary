@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
+
 import { sequelize } from "../util/database.js";
 
+// defining the table details to be created in database
 export const Library = sequelize.define("library", {
   id: {
     type: Sequelize.INTEGER,
