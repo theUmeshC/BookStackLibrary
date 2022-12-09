@@ -1,4 +1,4 @@
-import { Library } from "../model/library.js";
+import { Library } from "../Models/library.js";
 
 export const getList = (req, res) => {
   Library.findAll().then((list) => {

@@ -1,5 +1,5 @@
 import express from 'express';
-import { getList, postBook } from '../Controller/libraryController.js';
+import { getList, postBook } from '../Controllers/libraryController.js';
 
 export const router = express.Router();
 

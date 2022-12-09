@@ -1,32 +1,21 @@
 import express from "express";
-import mysql from "mysql2";
 import cors from "cors";
 import {sequelize} from "./util/database.js";
 import { router } from "./Routes/libraryRoutes.js";
 
+// initializing express
 const app = express();
 
+// middleware for Cross-Origin Resource Sharing 
 app.use(cors());
 
+// middleware to parses incoming requests with JSON payloads and is based on body-parser
 app.use(express.json());
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Cel@1234",
-  database: "library_schema",
-});
-
+//middleware handling request from /admin/.. routes
 app.use("/admin", router);
 
-app.get("/getList", (_, res) => {
-  const q = " SELECT * FROM new_table";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-
+//syncing database runs only once the server is started
 sequelize
   .sync()
   .then(() => {
