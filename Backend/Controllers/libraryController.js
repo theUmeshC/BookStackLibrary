@@ -79,6 +79,7 @@ export const deleteBook = (req, res) => {
 // controller to fetch a book wrt to title from library table from database
 export const fetchBookByTitle = (req, res) => {
   const bookTitle = req.params.bookTitle;
+  console.log(bookTitle);
   Library.findAll({ where: { title: bookTitle } })
     .then((book) => {
       return res.json(book);

@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 
-import {sequelize} from "./util/database.js";
+import { sequelize } from "./util/database.js";
 import { router } from "./Routes/libraryRoutes.js";
 
 // initializing express
 const app = express();
 
-// middleware for Cross-Origin Resource Sharing 
+// middleware for Cross-Origin Resource Sharing i.e., to different domains(like Localhost3000(React) and Localhost8800(server))
 app.use(cors());
 
 // middleware to parses incoming requests with JSON payloads and is based on body-parser
