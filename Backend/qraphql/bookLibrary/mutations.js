@@ -46,7 +46,7 @@ export const getEditBook = {
 export const postEditBook = {
   type: bookType,
   args: {
-    id: {type: GraphQLInt},
+    id: { type: GraphQLInt },
     title: { type: GraphQLString },
     author: { type: GraphQLString },
     imageUrl: { type: GraphQLString },

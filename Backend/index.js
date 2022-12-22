@@ -1,12 +1,16 @@
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
-import { buildSchema, GraphQLObjectType, GraphQLSchema } from "graphql";
+import { GraphQLObjectType, GraphQLSchema } from "graphql";
 import cors from "cors";
 import { sequelize } from "./util/database.js";
-import { getBookList , getBookById} from "./qraphql/bookLibrary/query.js";
-import { createBook, getEditBook, postEditBook, deleteBook, fetchBookByTitle } from "./qraphql/bookLibrary/mutations.js";
-
-console.log(getBookList);
+import { getBookList, getBookById } from "./qraphql/bookLibrary/query.js";
+import {
+  createBook,
+  getEditBook,
+  postEditBook,
+  deleteBook,
+  fetchBookByTitle,
+} from "./qraphql/bookLibrary/mutations.js";
 
 // initializing express server
 const app = express();
@@ -18,25 +22,30 @@ app.use(cors());
 app.use(express.json());
 
 const Query = new GraphQLObjectType({
-    name: 'Query',
-    fields: {
-        getBookList, getBookById
-    }
-})
+  name: "Query",
+  fields: {
+    getBookList,
+    getBookById,
+  },
+});
 
 const Mutation = new GraphQLObjectType({
-    name: "Mutation",
-    fields: () => ({
-        createBook, getEditBook, postEditBook, deleteBook, fetchBookByTitle
-    })
-})
+  name: "Mutation",
+  fields: () => ({
+    createBook,
+    getEditBook,
+    postEditBook,
+    deleteBook,
+    fetchBookByTitle,
+  }),
+});
 
 app.use(
   "/graphql",
   graphqlHTTP({
     schema: new GraphQLSchema({
-        query: Query,
-        mutation: Mutation
+      query: Query,
+      mutation: Mutation,
     }),
     graphiql: true,
   })
