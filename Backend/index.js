@@ -1,10 +1,14 @@
 import express from "express";
+import { graphqlHTTP } from "express-graphql";
+import { buildSchema, GraphQLObjectType, GraphQLSchema } from "graphql";
 import cors from "cors";
-
 import { sequelize } from "./util/database.js";
-import { router } from "./Routes/libraryRoutes.js";
+import { getBookList , getBookById} from "./qraphql/bookLibrary/query.js";
+import { createBook, getEditBook, postEditBook, deleteBook, fetchBookByTitle } from "./qraphql/bookLibrary/mutations.js";
 
-// initializing express
+console.log(getBookList);
+
+// initializing express server
 const app = express();
 
 // middleware for Cross-Origin Resource Sharing i.e., to different domains(like Localhost3000(React) and Localhost8800(server))
@@ -13,15 +17,36 @@ app.use(cors());
 // middleware to parses incoming requests with JSON payloads and is based on body-parser
 app.use(express.json());
 
-//middleware handling request from /admin/.. routes
-app.use("/admin", router);
+const Query = new GraphQLObjectType({
+    name: 'Query',
+    fields: {
+        getBookList, getBookById
+    }
+})
 
-//syncing database runs only once the server is started
+const Mutation = new GraphQLObjectType({
+    name: "Mutation",
+    fields: () => ({
+        createBook, getEditBook, postEditBook, deleteBook, fetchBookByTitle
+    })
+})
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: new GraphQLSchema({
+        query: Query,
+        mutation: Mutation
+    }),
+    graphiql: true,
+  })
+);
+
 sequelize
   .sync()
   .then(() => {
-    app.listen(8800, () => {
-      console.log("listening to port 8800");
+    app.listen(4000, () => {
+      console.log("listening to port 4000");
     });
   })
   .catch((err) => {
