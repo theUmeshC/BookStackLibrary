@@ -1,4 +1,4 @@
-# Welcome to Shopify App
+# Welcome to Book Library App
 
 This is a Repository of the BookLibrary App ✌
 
