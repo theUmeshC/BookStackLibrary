@@ -10,7 +10,7 @@ export const createBook = {
     imageUrl: { type: GraphQLString },
     publishDate: { type: GraphQLString },
   },
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     const book = await BookData.create({
       title: args.title,
       author: args.author,
@@ -31,7 +31,7 @@ export const getEditBook = {
   args: {
     id: { type: GraphQLInt },
   },
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     const [book] = await BookData.findAll({ where: { id: args.id } })
       .then((book) => {
         return book;
@@ -52,7 +52,7 @@ export const postEditBook = {
     imageUrl: { type: GraphQLString },
     publishDate: { type: GraphQLString },
   },
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     const book = await BookData.findAll({ where: { id: args.id } })
       .then(([item]) => {
         item.title = args.title;
@@ -75,8 +75,8 @@ export const deleteBook = {
   args: {
     id: { type: GraphQLInt },
   },
-  resolve: async (parent, args, context, info) => {
-    const [book] = await BookData.destroy({
+  resolve: async (_, args) => {
+    await BookData.destroy({
       where: {
         id: args.id,
       },
