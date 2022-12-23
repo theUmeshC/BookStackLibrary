@@ -44,7 +44,7 @@ export const getEditBook = {
 };
 
 export const postEditBook = {
-  type: bookType,
+  type: GraphQLString,
   args: {
     id: { type: GraphQLInt },
     title: { type: GraphQLString },
@@ -53,7 +53,7 @@ export const postEditBook = {
     publishDate: { type: GraphQLString },
   },
   resolve: async (_, args) => {
-    const book = await BookData.findAll({ where: { id: args.id } })
+    await BookData.findAll({ where: { id: args.id } })
       .then(([item]) => {
         item.title = args.title;
         item.author = args.author;
@@ -62,16 +62,18 @@ export const postEditBook = {
         return item.save();
       })
       .then(() => {
-        console.log("updated product");
+        return "updated product";
       })
       .catch((err) => {
         console.log(err);
+        return "error updating";
       });
+    return "updated product";
   },
 };
 
 export const deleteBook = {
-  type: bookType,
+  type: GraphQLString,
   args: {
     id: { type: GraphQLInt },
   },
@@ -80,8 +82,10 @@ export const deleteBook = {
       where: {
         id: args.id,
       },
-    });
-    return `deleted`;
+    }).catch((err) => {
+        console.log(err);
+        return "not found";
+      });
   },
 };
 
@@ -90,7 +94,7 @@ export const fetchBookByTitle = {
   args: {
     title: { type: GraphQLString },
   },
-  resolve: async (parents, args) => {
+  resolve: async (_, args) => {
     const [book] = await BookData.findAll({ where: { title: args.title } })
       .then((book) => {
         return book;
