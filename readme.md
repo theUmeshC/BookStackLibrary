@@ -68,8 +68,6 @@ http://Locallhost:8800/admin/fetchByTitle:bookTitle
 http://Locallhost:4000/graphql
 ```
 
-
 ## setting up mySql database
 
-set up mySql schema and replace the schema name and password in the util folder database file
-
+set up mySql database and replace the database name and password in the util folder database file
