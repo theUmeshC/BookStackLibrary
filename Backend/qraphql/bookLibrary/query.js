@@ -17,10 +17,14 @@ export const getBookById = {
   args: {
     id: { type: GraphQLInt },
   },
-  resolve: async (parent, args, context, info) => {
+  resolve: async (_, args) => {
     const [book] = await BookData.findAll({ where: { id: args.id } }).then(
       (item) => item
     );
     return book;
   },
 };
+
+const bookQuery =  { getBookList, getBookById };
+
+export default bookQuery;

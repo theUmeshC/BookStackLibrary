@@ -2,15 +2,10 @@ import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
 import cors from "cors";
+
 import { sequelize } from "./util/database.js";
-import { getBookList, getBookById } from "./qraphql/bookLibrary/query.js";
-import {
-  createBook,
-  getEditBook,
-  postEditBook,
-  deleteBook,
-  fetchBookByTitle,
-} from "./qraphql/bookLibrary/mutations.js";
+import bookMutation from "./qraphql/bookLibrary/mutations.js";
+import bookQuery from "./qraphql/bookLibrary/query.js";
 
 // initializing express server
 const app = express();
@@ -24,19 +19,14 @@ app.use(express.json());
 const Query = new GraphQLObjectType({
   name: "Query",
   fields: {
-    getBookList,
-    getBookById,
+    ...bookQuery,
   },
 });
 
 const Mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: () => ({
-    createBook,
-    getEditBook,
-    postEditBook,
-    deleteBook,
-    fetchBookByTitle,
+    ...bookMutation,
   }),
 });
 

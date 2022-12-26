@@ -83,9 +83,9 @@ export const deleteBook = {
         id: args.id,
       },
     }).catch((err) => {
-        console.log(err);
-        return "not found";
-      });
+      console.log(err);
+      return "not found";
+    });
   },
 };
 
@@ -105,3 +105,13 @@ export const fetchBookByTitle = {
     return book;
   },
 };
+
+const bookMutation = {
+  createBook,
+  getEditBook,
+  postEditBook,
+  deleteBook,
+  fetchBookByTitle,
+};
+
+export default bookMutation;
