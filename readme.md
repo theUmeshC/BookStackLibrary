@@ -76,14 +76,14 @@ set up mySql schema and replace the schema name and password in the util folder 
 ## GraphQL endpoint Postman snapshot
 
 <img width="100%" alt="createbook" src="https://user-images.githubusercontent.com/108338019/215047519-268b11e5-42c9-4d55-88f8-c2e1a6ab9a65.png">
-<img width="654" alt="deletebyId" src="https://user-images.githubusercontent.com/108338019/215047828-7a085dc8-043d-4dbd-8631-2b0502bff455.png">
-<img width="656" alt="editbyid" src="https://user-images.githubusercontent.com/108338019/215047843-afee6880-e2b3-4944-a8b1-82830697b3a6.png">
-<img width="652" alt="getbookbyId" src="https://user-images.githubusercontent.com/108338019/215047861-f602abd4-05f3-4543-bf30-0d25b7de60d7.png">
-<img width="641" alt="getbookbytitle" src="https://user-images.githubusercontent.com/108338019/215047876-2b0d2fd9-7f67-47e6-ab2e-641e0280a981.png">
-<img width="646" alt="getbooklist" src="https://user-images.githubusercontent.com/108338019/215047898-f213ff52-cfe2-4594-90c7-23dde743f966.png">
+<img width="100%" alt="deletebyId" src="https://user-images.githubusercontent.com/108338019/215047828-7a085dc8-043d-4dbd-8631-2b0502bff455.png">
+<img width="100%" alt="editbyid" src="https://user-images.githubusercontent.com/108338019/215047843-afee6880-e2b3-4944-a8b1-82830697b3a6.png">
+<img width="100%" alt="getbookbyId" src="https://user-images.githubusercontent.com/108338019/215047861-f602abd4-05f3-4543-bf30-0d25b7de60d7.png">
+<img width="100%" alt="getbookbytitle" src="https://user-images.githubusercontent.com/108338019/215047876-2b0d2fd9-7f67-47e6-ab2e-641e0280a981.png">
+<img width="100%" alt="getbooklist" src="https://user-images.githubusercontent.com/108338019/215047898-f213ff52-cfe2-4594-90c7-23dde743f966.png">
 
 
 ## Rest api endpoint Postman snapshot
 
-<img width="640" alt="restApiAddBook" src="https://user-images.githubusercontent.com/108338019/215048877-c34c08d8-05ef-4111-9b08-43d0ca50af0c.png">
-<img width="639" alt="restApiGetBook" src="https://user-images.githubusercontent.com/108338019/215048894-59e566c9-f0b3-4379-bafd-24a268ae0f99.png">
+<img width="100%" alt="restApiAddBook" src="https://user-images.githubusercontent.com/108338019/215048877-c34c08d8-05ef-4111-9b08-43d0ca50af0c.png">
+<img width="100%" alt="restApiGetBook" src="https://user-images.githubusercontent.com/108338019/215048894-59e566c9-f0b3-4379-bafd-24a268ae0f99.png">
