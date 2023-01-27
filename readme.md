@@ -1,4 +1,4 @@
-# Welcome to Book Library App
+# Welcome to Book library App
 
 This is a Repository of the BookLibrary App ✌
 
@@ -68,6 +68,19 @@ http://Locallhost:8800/admin/fetchByTitle:bookTitle
 http://Locallhost:4000/graphql
 ```
 
+
 ## setting up mySql database
 
-set up mySql database and replace the database name and password in the util folder database file
+set up mySql schema and replace the schema name and password in the util folder database file
+
+## GraphQL endpoint Postman snapshot
+
+<img width="100%" alt="createbook" src="https://user-images.githubusercontent.com/108338019/215047519-268b11e5-42c9-4d55-88f8-c2e1a6ab9a65.png">
+<img width="100%" alt="deletebyId" src="https://user-images.githubusercontent.com/108338019/215047828-7a085dc8-043d-4dbd-8631-2b0502bff455.png">
+<img width="100%" alt="getbooklist" src="https://user-images.githubusercontent.com/108338019/215047898-f213ff52-cfe2-4594-90c7-23dde743f966.png">
+
+
+## Rest api endpoint Postman snapshot
+
+<img width="100%" alt="restApiAddBook" src="https://user-images.githubusercontent.com/108338019/215048877-c34c08d8-05ef-4111-9b08-43d0ca50af0c.png">
+<img width="100%" alt="restApiGetBook" src="https://user-images.githubusercontent.com/108338019/215048894-59e566c9-f0b3-4379-bafd-24a268ae0f99.png">
