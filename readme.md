@@ -75,7 +75,7 @@ set up mySql schema and replace the schema name and password in the util folder 
 
 ## GraphQL endpoint Postman snapshot
 
-<img width="657" alt="createbook" src="https://user-images.githubusercontent.com/108338019/215047519-268b11e5-42c9-4d55-88f8-c2e1a6ab9a65.png">
+<img width="100%" alt="createbook" src="https://user-images.githubusercontent.com/108338019/215047519-268b11e5-42c9-4d55-88f8-c2e1a6ab9a65.png">
 <img width="654" alt="deletebyId" src="https://user-images.githubusercontent.com/108338019/215047828-7a085dc8-043d-4dbd-8631-2b0502bff455.png">
 <img width="656" alt="editbyid" src="https://user-images.githubusercontent.com/108338019/215047843-afee6880-e2b3-4944-a8b1-82830697b3a6.png">
 <img width="652" alt="getbookbyId" src="https://user-images.githubusercontent.com/108338019/215047861-f602abd4-05f3-4543-bf30-0d25b7de60d7.png">
