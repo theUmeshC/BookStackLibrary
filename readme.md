@@ -81,3 +81,9 @@ set up mySql schema and replace the schema name and password in the util folder 
 <img width="652" alt="getbookbyId" src="https://user-images.githubusercontent.com/108338019/215047861-f602abd4-05f3-4543-bf30-0d25b7de60d7.png">
 <img width="641" alt="getbookbytitle" src="https://user-images.githubusercontent.com/108338019/215047876-2b0d2fd9-7f67-47e6-ab2e-641e0280a981.png">
 <img width="646" alt="getbooklist" src="https://user-images.githubusercontent.com/108338019/215047898-f213ff52-cfe2-4594-90c7-23dde743f966.png">
+
+
+## Rest api endpoint Postman snapshot
+
+<img width="640" alt="restApiAddBook" src="https://user-images.githubusercontent.com/108338019/215048877-c34c08d8-05ef-4111-9b08-43d0ca50af0c.png">
+<img width="639" alt="restApiGetBook" src="https://user-images.githubusercontent.com/108338019/215048894-59e566c9-f0b3-4379-bafd-24a268ae0f99.png">
